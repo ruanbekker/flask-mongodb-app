@@ -1,0 +1,84 @@
+<html>
+
+  <head>
+
+    <title>Flask with MongoDb</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Profiles with Flask & MongoDb</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" method="post" action="/query_userid">
+            <div class="form-group">
+              <input type="text" name="userid" placeholder="UserId.." class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button> 
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <br>
+    <br>
+   <!-- <h1><center>Flask and MongoDb</center></h1> --!>
+    <br>
+    <br>
+    <div class="container">
+    
+<!--      <form action="/write" method="POST">
+        <input type="text" name="userinput" id="userinput">
+        <input type="submit" value="Submit">
+      </form> --!>
+
+ <!--     <a href="./deleteall">Delete all</a> --!>
+      <center>
+      <h1>Results ({{number}}) </h1>
+
+     </center>
+
+         <table class="table">
+           <thead>
+             <tr>
+               <th>UserId</th>
+               <th>Name</th>
+               <th>Surname</th>
+               <th>Age</th>
+               <th>Job</th>
+             </tr>
+           </thead>
+
+{% for nameval in namevalues %}
+
+           <tbody>
+             <tr>
+               <th scope="row">{{nameval._id}}</th>
+               <td>{{nameval.name}}</td>
+               <td>{{nameval.surname}}</td>
+               <td>{{nameval.age}}</td>
+               <td>{{nameval.job}}</td>
+             </tr>
+           </tbody>
+
+{% endfor %}
+
+         </table>
+
+
+
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,119 @@
+<html>
+
+  <head>
+
+    <title>Flask with MongoDb</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Profiles with Flask & MongoDb</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" method="post" action="/query_userid">
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="userid" placeholder="UserId.." class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success" >Search</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+  <body>
+
+
+
+    <div class="container">
+
+      <form class="form-signin" method="post" action="/query_name">
+        <h2 class="form-signin-heading">Search by Name</h2>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">Name</label>
+          <input type="text" autocomplete="off" id="inputName" name="name" class="form-control" placeholder="Name.." required autofocus>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+      </form>
+
+      <form class="form-signin" method="post" action="/query_job">
+        <h2 class="form-signin-heading">Search by Job</h2>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">Name</label>
+          <input type="text" autocomplete="off" id="inputName" name="job" class="form-control" placeholder="Job.." required autofocus>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+      </form>
+
+
+    </div> 
+  </body> 
+
+    <div class="container">
+    <!-- <div class="bs-example" data-example-id="body-copy"> <center><p><h1>Search Results:</h1></p><br> </center></div>--!>
+    <div class="container theme-showcase" role="main">
+
+    <div class="container">
+
+<!--      <form action="/write" method="POST">
+        <input type="text" name="userinput" id="userinput">
+        <input type="submit" value="Submit">
+      </form> --!>
+
+ <!--     <a href="./deleteall">Delete all</a> --!>
+      <center>
+
+      {% if number is not none %}
+      <h1>Results ({{number}}) </h1>
+      {% else %}
+      <h1> </h1>
+      {% endif %}
+
+     </center>
+
+         <table class="table">
+           <thead>
+             <tr>
+               <th>UserId</th>
+               <th>Name</th>
+               <th>Surname</th>
+               <th>Age</th>
+               <th>Job</th>
+             </tr>
+           </thead>
+
+{% for r in query %}
+
+           <tbody>
+             <tr>
+               <th scope="row">{{r._id}}</th>
+               <td>{{r.name}}</td>
+               <td>{{r.surname}}</td>
+               <td>{{r.age}}</td>
+               <td>{{r.job}}</td>
+             </tr>
+           </tbody>
+
+{% endfor %}
+
+         </table>
+
+    </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,69 @@
+<html>
+
+  <head>
+
+    <title>Flask with MongoDb</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Profiles with Flask & MongoDb</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" method="post" action="/query_userid">
+            <div class="form-group">
+              <input type="text" name="userid" placeholder="UserId.." class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+    <div class="bs-example" data-example-id="body-copy"> <center><p><h1>Basic WebApp with Python Flask and MongoDb</h1></p><br> </center></div>
+    </div>
+
+    <div class="col-md-4 col-md-offset-4">
+      <button onclick="location.href='/get'" type="button" class="btn btn-primary btn-lg btn-block">List All Profiles</button>
+      <button onclick="location.href='/search'"type="button" class="btn btn-default btn-lg btn-block">Search Profiles</button>
+      <br><br>
+    </div>
+
+   <br>
+    </div>
+   <div class="container">
+      <br>
+      <div class="row">
+        <p>
+        <br><h2> <div class="col-md-6 col-md-offset-3"><center>Endpoint Examples</center></div></h2><br><br>
+        <br>
+        <p><div class="col-md-6 col-md-offset-3"><br><strong>Display Home Page:</strong><p><pre>/  </pre></div></p>
+        <p><div class="col-md-6 col-md-offset-3"><strong>List All Users:</strong><p><pre>/get </pre></div></p>
+        <p><div class="col-md-6 col-md-offset-3"><strong>Query by Username:</strong><p><pre>/get/&lt;id&gt; - eg. /get/jamesf </pre></div></p>
+        <p><div class="col-md-6 col-md-offset-3"><strong>Query by Job Title:</strong><p><pre>/get/job/&lt;job&gt; - eg. /get/job/doc </pre></div></p>
+        <p><div class="col-md-6 col-md-offset-3"><strong>Query by Name:</strong><p><pre>/get/name/&lt;name&gt; - eg. /get/name/james </pre></div></p>
+        <p><div class="col-md-6 col-md-offset-3"><strong>Add Users:</strong><p><pre>/add/&lt;id&gt;/&lt;name&gt;/&lt;surname&gt;/&lt;age&gt;/&lt;job&gt;</pre></div></p>
+      </div>
+
+</div>
+
+    </div>
+  </body>
+
+</html>
